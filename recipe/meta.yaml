@@ -6,24 +6,24 @@ package:
 
 source:
   - folder: dist
-    url: https://pypi.io/packages/source/t/trio-websocket/trio-websocket-{{ version }}.tar.gz
+    url: https://pypi.org/packages/source/t/trio-websocket/trio-websocket-{{ version }}.tar.gz
     sha256: 18c11793647703c158b1f6e62de638acada927344d534e3c7628eedcb746839f
   - folder: src
     url: https://github.com/HyperionGray/trio-websocket/archive/refs/tags/{{ version }}.tar.gz
     sha256: 31b33561be82ea8f748ca2d8adaf3c45a2003c1a5e1550d7cf44e5a884564bce
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: cd dist && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
     - exceptiongroup
-    - python >=3.7
+    - python >={{ python_min }}
     - trio >=0.11
     - wsproto >=0.14
 
@@ -43,6 +43,7 @@ test:
     - pytest-cov
     - pytest-trio >=0.5.0
     - trustme
+    - python {{ python_min }}
 
 about:
   home: https://github.com/HyperionGray/trio-websocket
