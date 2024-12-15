@@ -1,9 +1,9 @@
 import sys
 from subprocess import call
 
-FAIL_UNDER = "95"
+FAIL_UNDER = "87"
 COV = ["coverage"]
-RUN = ["run", "--source=gql", "--branch", "-m"]
+RUN = ["run", "--source=trio_websocket", "--branch", "-m"]
 PYTEST = ["pytest", "-vv", "--color=yes", "--tb=long"]
 REPORT = ["report", "--show-missing", "--skip-covered", f"--fail-under={FAIL_UNDER}"]
 
@@ -26,7 +26,7 @@ K = ["-k", f"not ({SKIP_OR})"]
 if __name__ == "__main__":
     sys.exit(
         # run the tests
-        call([*COV, *RUN, *PYTEST, *K])
+        call([*COV, *RUN, *PYTEST, *K], cwd="src")
         # maybe run coverage
-        or call([*COV, *REPORT])
+        or call([*COV, *REPORT], cwd="src")
     )

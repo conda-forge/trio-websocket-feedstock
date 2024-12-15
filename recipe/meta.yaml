@@ -33,19 +33,18 @@ test:
   source_files:
     - src/pytest.ini
     - src/tests
-  imports:
-    - trio_websocket
-  commands:
-    - pip check
-    - cd src
   requires:
     - attrs >=19.2.0
     - pip
     - pytest >=4.6
     - pytest-cov
     - pytest-trio >=0.5.0
-    - trustme
     - python {{ python_min }}
+    - trustme
+  imports:
+    - trio_websocket
+  commands:
+    - pip check
 
 about:
   home: https://github.com/HyperionGray/trio-websocket
