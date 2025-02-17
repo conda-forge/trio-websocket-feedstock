@@ -26,7 +26,7 @@ K = ["-k", f"not ({SKIP_OR})"]
 if __name__ == "__main__":
     sys.exit(
         # run the tests
-        call([*COV, *RUN, *PYTEST, *K], cwd="src")
+        call([*COV, *RUN, *PYTEST, *K])
         # maybe run coverage
-        or call([*COV, *REPORT], cwd="src")
+        or call([*COV, *REPORT])
     )
