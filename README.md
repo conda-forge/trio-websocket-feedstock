@@ -3,13 +3,13 @@ About trio-websocket-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/trio-websocket-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/HyperionGray/trio-websocket
+Home: https://github.com/python-trio/trio-websocket
 
 Package license: MIT
 
 Summary: WebSocket library for Trio
 
-Documentation: https://trio-websocket.readthedocs.io
+Documentation: https://trio-websocket.readthedocs.io/
 
 Current build status
 ====================
