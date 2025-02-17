@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
 schema_version: 1
 
 context:
@@ -44,7 +45,7 @@ tests:
         - pytest >=4.6
         - pytest-cov
         - pytest-trio >=0.5.0
-        - python ${{ python_min }}
+        - python ${{ python_min }}.*
         - trustme
     script:
       - python run_test.py

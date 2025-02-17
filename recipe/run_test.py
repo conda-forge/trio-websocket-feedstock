@@ -1,11 +1,13 @@
 import sys
 from subprocess import call
+from pathlib import Path
 
 FAIL_UNDER = "87"
 COV = ["coverage"]
 RUN = ["run", "--source=trio_websocket", "--branch", "-m"]
 PYTEST = ["pytest", "-vv", "--color=yes", "--tb=long"]
 REPORT = ["report", "--show-missing", "--skip-covered", f"--fail-under={FAIL_UNDER}"]
+PYTEST_INI = "\n".join(["[pytest]", "trio_mode = true"])
 
 SKIPS = [
     # https://github.com/conda-forge/trio-websocket-feedstock/pull/7
@@ -24,6 +26,7 @@ K = ["-k", f"not ({SKIP_OR})"]
 
 
 if __name__ == "__main__":
+    Path("pytest.ini").write_text(PYTEST_INI, encoding="utf-8")
     sys.exit(
         # run the tests
         call([*COV, *RUN, *PYTEST, *K])
