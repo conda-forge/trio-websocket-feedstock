@@ -1,4 +1,4 @@
-{% set version = "0.11.1" %}
+{% set version = "0.12.0" %}
 
 package:
   name: trio-websocket
@@ -6,14 +6,14 @@ package:
 
 source:
   - folder: dist
-    url: https://pypi.org/packages/source/t/trio-websocket/trio-websocket-{{ version }}.tar.gz
-    sha256: 18c11793647703c158b1f6e62de638acada927344d534e3c7628eedcb746839f
+    url: https://pypi.org/packages/source/t/trio-websocket/trio_websocket-{{ version }}.tar.gz
+    sha256: d9bc17ee061c66c9abf62a08fe9f36949ad6be17eed281c3b979be9293f3df74
   - folder: src
     url: https://github.com/HyperionGray/trio-websocket/archive/refs/tags/{{ version }}.tar.gz
-    sha256: 31b33561be82ea8f748ca2d8adaf3c45a2003c1a5e1550d7cf44e5a884564bce
+    sha256: eb0aabdc22a25585257473172336b3d9e1661f6a672541134e5d6de7020102cf
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script:
     - cd dist && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
