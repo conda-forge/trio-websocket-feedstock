@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: 0.12.0
+  version: "0.12.1"
 
 package:
   name: trio-websocket
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/t/trio-websocket/trio_websocket-${{ version }}.tar.gz
-  sha256: d9bc17ee061c66c9abf62a08fe9f36949ad6be17eed281c3b979be9293f3df74
+  sha256: d55ccd4d3eae27c494f3fdae14823317839bdcb8214d1173eacc4d42c69fc91b
 
 build:
   number: 0
@@ -25,6 +25,7 @@ requirements:
     - setuptools
   run:
     - exceptiongroup
+    - outcome >=1.2.0
     - python >=${{ python_min }}
     - trio >=0.11
     - wsproto >=0.14
