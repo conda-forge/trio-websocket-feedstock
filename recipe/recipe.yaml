@@ -25,6 +25,7 @@ requirements:
     - setuptools
   run:
     - exceptiongroup
+    - outcome >=1.2.0
     - python >=${{ python_min }}
     - trio >=0.11
     - wsproto >=0.14
